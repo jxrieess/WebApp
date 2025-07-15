@@ -7,24 +7,80 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 2em;
+      margin: 0;
+      height: 100vh;
       background-color: #f0f8ff;
+      display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2em;
     }
+
     h1 {
       color: #2c3e50;
+      animation: fadeInUp 1.5s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
     }
-    p {
+
+    .content {
+      max-width: 600px;
+      animation: fadeIn 2s ease-out forwards;
+      opacity: 0;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    .content p, .content ul {
       color: #34495e;
+      margin-top: 1em;
     }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "🌟 ";
+    }
+
     a {
       color: #2980b9;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Welcome to My Page, Jessa!</h1>
+  <div class="content">
+    <p>Hi there! I'm Jessa. This is my personal page where I share my interests and passions.</p>
+
+    <p><strong>Things I Love:</strong></p>
+    <ul>
+      <li>Creative web design</li>
+      <li>Learning new things</li>
+      <li>Nature and travel</li>
+      <li>Music and art</li>
+    </ul>
+
+    <p>Want to connect with me? Feel free to <a href="mailto:belgerajessa0211@gmail.com">send me an email</a>.</p>
+  </div>
 </body>
 </html>
